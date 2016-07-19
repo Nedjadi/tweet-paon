@@ -1,0 +1,30 @@
+-- on déclare toutes nos tables dans un seul fichier
+
+CREATE TABLE users (
+  pseudo VARCHAR(255) NOT NULL PRIMARY KEY,
+  name VARCHAR(255),
+  firstname VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR(255),
+  image VARCHAR(255)
+)ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+CREATE TABLE tweets (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  user_pseudo VARCHAR(255) NOT NULL,
+  message VARCHAR(140),
+  like_nb INT,
+  rt_nb INT
+)ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+CREATE TABLE rt (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  tweet_id INT NOT NULL,
+  user_pseudo VARCHAR(255) NOT NULL
+)ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+CREATE TABLE session (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  pseudo VARCHAR(255) NOT NULL,
+  session VARCHAR(255) NOT NULL
+)ENGINE=MyISAM  DEFAULT CHARSET=utf8;
